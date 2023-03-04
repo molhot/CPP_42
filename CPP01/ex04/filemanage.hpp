@@ -27,6 +27,7 @@ class	Fileinfo
 		Fileinfo(std::string fn, ReplaceInfo ri);
 		~Fileinfo();
 		std::string	obtain_filecontent(void);
+		void		replace_wd(void);
 };
 
 #endif

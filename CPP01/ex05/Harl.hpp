@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochitteiunon? <sakata19991214@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/04 00:14:38 by mochitteiun       #+#    #+#             */
-/*   Updated: 2023/03/04 00:14:38 by mochitteiun      ###   ########.fr       */
+/*   Created: 2023/03/04 20:48:30 by mochitteiun       #+#    #+#             */
+/*   Updated: 2023/03/04 20:48:30 by mochitteiun      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "filemanage.hpp"
+#ifndef	Harl_HPP
+#define	Harl_HPP
 
-int	main(int argc, char **argv)
+#include <iostream>
+
+class	Harl
 {
-	if (argc != 4)
-		std::cout << "you must write three argument, filename replaceword, replaceword2" << std::endl;
-	else
-	{
-		ReplaceInfo	replaceinfo = ReplaceInfo(argv[2], argv[3]);
-		Fileinfo	f_info = Fileinfo(argv[1], replaceinfo);
-		std::cout << f_info.obtain_filecontent() << std::endl;
-		f_info.replace_wd();
-	}
-}
+	private:
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+	
+	public:
+		Harl();
+		~Harl();
+		void	complain(std::string level);
+};
+
+typedef	void(Harl::*Harl_func)(void);
+
+#endif

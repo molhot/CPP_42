@@ -5,22 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochitteiunon? <sakata19991214@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/04 00:14:38 by mochitteiun       #+#    #+#             */
-/*   Updated: 2023/03/04 00:14:38 by mochitteiun      ###   ########.fr       */
+/*   Created: 2023/03/04 20:48:34 by mochitteiun       #+#    #+#             */
+/*   Updated: 2023/03/04 20:48:34 by mochitteiun      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "filemanage.hpp"
+#include "Harl.hpp"
 
-int	main(int argc, char **argv)
+int main()
 {
-	if (argc != 4)
-		std::cout << "you must write three argument, filename replaceword, replaceword2" << std::endl;
-	else
+	std::string	level;
+	Harl		harl;
+
+	level = "";
+	while (level != "exit")
 	{
-		ReplaceInfo	replaceinfo = ReplaceInfo(argv[2], argv[3]);
-		Fileinfo	f_info = Fileinfo(argv[1], replaceinfo);
-		std::cout << f_info.obtain_filecontent() << std::endl;
-		f_info.replace_wd();
+		std::cout << "input level" << std::endl;
+		std::cin >> level;
+		harl.complain(level);
 	}
 }

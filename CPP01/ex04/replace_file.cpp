@@ -22,3 +22,12 @@ ReplaceInfo::~ReplaceInfo()
 
 }
 
+std::string	ReplaceInfo::obtain_rwd(void)
+{
+	return this->replacewd;
+}
+
+std::string	ReplaceInfo::obtain_redwd(void)
+{
+	return this->replacedwd;
+}

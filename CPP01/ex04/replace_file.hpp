@@ -26,6 +26,8 @@ class	ReplaceInfo
 	public:
 		ReplaceInfo(std::string s1, std::string s2);
 		~ReplaceInfo();
+		std::string	obtain_rwd(void);
+		std::string	obtain_redwd(void);
 };
 
 #endif

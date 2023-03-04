@@ -42,3 +42,20 @@ std::string	Fileinfo::obtain_filecontent(void)
 	}
 	return (allline);
 }
+
+void	Fileinfo::replace_wd(void)
+{
+	std::string	replaced_wd = this->replaceinfo.obtain_redwd();
+	std::string	replace_wd = this->replaceinfo.obtain_rwd();
+	std::string	text = this->replaced_fileinfo;
+
+	if (text == "\0")
+	{
+		std::cout << "empty file" << std::endl;
+		return ;
+	}
+	size_t		pos = text.find("bbb");
+	std::cout << pos << std::endl;
+	text.erase(pos, 3);
+	std::cout << text << std::endl;
+}
