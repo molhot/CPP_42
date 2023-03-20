@@ -12,15 +12,19 @@
 
 #include <iostream>
 
-Class Zombie()
+class Zombie
 {
 	private:
 		std::string	name;
 
 	public:
+		Zombie();
 		Zombie(std::string name);
+		Zombie(const Zombie &cpzombie);
+		Zombie& operator=(const Zombie &cpzombie);
 		~Zombie();
-		Zombie*	newZombie(std::string name);
-		void	randomChump(std::string name);
 		void	makesound();
-}
+};
+
+Zombie*	newZombie(std::string name);
+void	randomChump(std::string name);
